@@ -1,0 +1,5 @@
+Create an Airbnb Clone with Next.js 14, Kinde, Supabase, Prisma and Tailwind
+
+-open web page: https://nextjs.org
+-type command npx create-next-app@latest .
+-update Next.js app to version 14, React 18 and Tailwind CSS 3
