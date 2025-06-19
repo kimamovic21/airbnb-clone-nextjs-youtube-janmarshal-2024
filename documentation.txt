@@ -1,12 +1,33 @@
 Create an Airbnb Clone with Next.js 14, Kinde, Supabase, Prisma and Tailwind
 
+
+Next.js app installation
+
 -open web page: https://nextjs.org
 -type command npx create-next-app@latest .
 -update Next.js app to version 14, React 18 and Tailwind CSS 3
 -type command: npm run dev
 -open route: http://localhost:3000/
+
+
+Shadcn ui installation
+
 -open web page: https://ui.shadcn.com/
 -type command: npx shadcn@latest init
 -type command: npx shadcn@latest add button
 -open link: https://ui.shadcn.com/themes
 -copy code from documentation and paste it in globals.css file
+
+
+Navbar component
+
+-in folder app create folder components
+-in folder components create components Navbar.tsx
+-in component layout.tsx import component Navbar from component Navbar.tsx
+-in component Navbar.tsx import components Link and Image
+-create component UserNav.tsx and function UserNav()
+-open link: https://ui.shadcn.com/docs/components/dropdown-menu
+-type command: npx shadcn@latest add dropdown-menu
+-in component UserNav.tsx import dropdown components from component dropdown-menu.tsx
+-in jsx add dropdown components
+-in component Navbar.tsx import component UserNav from component UserNav.tsx
