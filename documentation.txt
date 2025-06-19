@@ -31,3 +31,21 @@ Navbar component
 -in component UserNav.tsx import dropdown components from component dropdown-menu.tsx
 -in jsx add dropdown components
 -in component Navbar.tsx import component UserNav from component UserNav.tsx
+
+
+Setting up Auth
+
+-open web page: https://kinde.com
+-create new business app
+-open link: https://docs.kinde.com/
+-type command: npm i @kinde-oss/kinde-auth-nextjs
+-create files .env and example.env and env variables
+-create folders api/auth/[kindeAuth] and route.ts file
+-in route.ts file import function handleAuth from package kinde
+-create and export variable GET
+-in component UserNav.tsx import functions RegisterLink, LoginLink and LogoutLink from package kinde
+-import function getKindeServerSession from package kinde
+-destructure variable const { getUser }
+-create variable const user
+-add to function UserNav keyword async
+-in component DropdownMenuContent add ternary operator for variable user
