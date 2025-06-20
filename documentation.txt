@@ -49,3 +49,30 @@ Setting up Auth
 -create variable const user
 -add to function UserNav keyword async
 -in component DropdownMenuContent add ternary operator for variable user
+-open route: http://localhost:3000 and register
+-open route: http://localhost:3000 and login
+-http://localhost:3000 and logout
+
+
+Creating Filter Bar
+
+-in folder components create component MapFilterItems.tsx
+-in component app/page.tsx import component MapFilterItems from component MapFilterItems.tsx
+-in folder app create folder lib and categoryItems.ts file
+-in categoryItems.ts file create interface iAppProps
+-create and export array categoryItems with type iAppProps[]
+-in component MapFilterItems.tsx import array categoryItems from categoryItems.ts file
+-in jsx, in parent div element invoke function categoryItems?.map()
+-import components Link and Image
+-in next.config.mjs file add object images
+-in globals.css file add style for class .no-scrollbar
+-in component MapFilterItems.tsx add directive 'use client'
+-import functions usePathname and useSearchParams from package next/navigation
+-create variable const searchParams
+-create variables const searchParams, const search and const pathname
+-import function useCallback from package react
+-create function createQueryString()
+-add to component Link dynamic href
+-import function cn from lib/utils.ts file
+-open route: http://localhost:3000/
+-open route: http://localhost:3000/?filter=trending
