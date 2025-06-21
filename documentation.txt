@@ -76,3 +76,20 @@ Creating Filter Bar
 -import function cn from lib/utils.ts file
 -open route: http://localhost:3000/
 -open route: http://localhost:3000/?filter=trending
+
+
+Setting up Supabase database & Prisma
+
+-open web page: https://supabase.com
+-open Supabase organization and create project
+-open web page: https://www.prisma.io/
+-type command: npm i -D prisma  
+-type command: npm i @prisma/client
+-type command: npx prisma db push
+-in .env file create variables DATABASE_URL and DIRECT_URL
+-open link: https://www.prisma.io/docs/orm/more/help-and-troubleshooting/nextjs-help
+-in folder lib create db.ts file
+-in db.ts file copy code from documentation
+-in folder auth create folder creation and route.ts file
+-in route.ts file create and export async function GET()
+-type command: npx prisma studio

@@ -9,8 +9,10 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
+  DropdownMenuSeparator,
   DropdownMenuTrigger
 } from '@/components/ui/dropdown-menu';
+import Link from 'next/link';
 
 const UserNav = async () => {
   const { getUser } = getKindeServerSession();
@@ -37,6 +39,34 @@ const UserNav = async () => {
       <DropdownMenuContent align='end' className='w-[200px]'>
         {user ? (
           <>
+            <DropdownMenuItem>
+              <form className='w-full'>
+                <button type='submit' className='w-full text-start'>
+                  Airbnb your Home
+                </button>
+              </form>
+            </DropdownMenuItem>
+
+            <DropdownMenuItem>
+              <Link href='/my-homes' className='w-full'>
+                My Listings
+              </Link>
+            </DropdownMenuItem>
+
+            <DropdownMenuItem>
+              <Link href='/favorites' className='w-full'>
+                My Favorites
+              </Link>
+            </DropdownMenuItem>
+
+            <DropdownMenuItem>
+              <Link href='/reservations' className='w-full'>
+                My Reservations
+              </Link>
+            </DropdownMenuItem>
+
+            <DropdownMenuSeparator />
+
             <DropdownMenuItem>
               <LogoutLink className='w-full'>Logout</LogoutLink>
             </DropdownMenuItem>
