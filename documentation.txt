@@ -93,3 +93,83 @@ Setting up Supabase database & Prisma
 -in folder auth create folder creation and route.ts file
 -in route.ts file create and export async function GET()
 -type command: npx prisma studio
+-open route: http://localhost:3000 and register
+-open route: http://localhost:3000 and login
+
+
+Creating a Home
+
+-in schema.prisma file create model Home
+-add relation between models User and Home
+-open route: http://localhost:3000
+-type command: npx prisma db push
+-open Supabase project to see tables
+-in folder ap create folders create, [id] and component page.tsx
+-in folder [id] create component layout.tsx
+-open route: http://localhost:3000/create/[id]/structure
+-in folder components create component SelectCategory and function SelectCategory()
+-import array categoryItems from categoryItems.ts file
+-open link: https://ui.shadcn.com/docs/components/card
+-type command: npx shadcn@latest add card
+-in component structure/page.tsx import component SelectCategory from components/SelectCategory.tsx
+-in folder app create actions.ts file
+-in actions.ts file add directive 'use server'
+-create and export async function createAirbnbHome()
+-in component UserNav.tsx import function createAirbnbHome from actions.ts file
+-create variable const createHomeWithId
+-in jsx, in form element add event actions and pass function createAirbnbHome
+-open route: http://localhost:3000/ and click button Airbnb your Home
+-in folder [id] create folder description and component page.tsx
+-in component [id]/page.tsx create and export function DescriptionPage()
+-in actions.ts file create async function createCategoryPage()
+-in component SelectCategory.tsx create input element with attributes
+-in component structure/page.tsx, add to function StructurePage() parameter params
+-in jsx create input element with attributes
+-import function createCategoryPage from actions.ts file
+-in jsx add to form element attribute action
+-in folder components create component SubmitButtons.tsx
+-in component SubmitButtons.tsx create and export function CreationSubmit()
+-in component structure/page.tsx import component CreationSubmit from component SubmitButtons.tsx
+-type command: npx prisma studio
+-open route: http://localhost:3000/create/[id]/structure
+-install shadcn components Label, Input, Textarea and Select
+-in component description/page.tsx create form element
+-open route: http://localhost:3000/create/[id]/description
+-in folder components create component Counter.tsx and function Counter()
+-in component description/page.tsx import component Counter from folder components/Counter.tsx
+-create div elements for rental information
+-in folder components create component CreationBottomBar.tsx and function CreationBottomBar()
+-in component structure/page.tsx import component CreationBottomBar from folder components/CreationBottomBar.tsx
+-in actions.ts file create and export async function createDescription()
+-in component structure/page.tsx import function createDescription from actions.ts file
+-in jsx add to form element event action
+-open link: https://supabase.com/docs/reference/javascript/typescript-support
+-type command: npm i @supabase/supabase-js
+-in folder lib create supabase.ts file
+-in supabase.ts file create and variable const supabase
+-in .env file create variables SUPABASE_URL and SUPABASE_ANON_KEY
+-open Supabase project and create bucket images
+-in actions.ts file import object supabase from supabase.ts file
+-open route: http://localhost:3000/create/[id]/description
+-in folder [id] create folder address and component page.tsx
+-in component address/page.tsx create and export function AddressPage()
+-in actions.ts file create and export async function createLocation()
+-open route: http://localhost:3000/create/[id]/address
+-in component AddressPage.tsx import function createLocation from actions.ts file
+-open link: https://www.npmjs.com/package/world-countries
+-type command: npm i world-countries
+-in folder lib create getCountries.ts file
+-in getCountries.ts file import array countries from package world-countries
+-create and export function useCountries()
+-in component address/page.tsx import function useCountries from getCountries.ts file
+-in component SelectGroup invoke function getAllCountries()?.map()
+-open link: https://www.npmjs.com/package/react-leaflet
+-type command: npm i leaflet react-leaflet
+-type command: npm i -D @types/leaflet
+-in folder component create component Map.tsx and function Map()
+-import components from package react-leaflet
+-open link: https://ui.shadcn.com/docs/components/skeleton
+-type command: npx shadcn@latest add skeleton
+-in component address/page.tsx import component Map from component components/Map.tsx
+-in actions.ts file create and export async function createLocation()
+-in component address/page.tsx import function createLocation from actions.ts file
