@@ -173,3 +173,24 @@ Creating a Home
 -in component address/page.tsx import component Map from component components/Map.tsx
 -in actions.ts file create and export async function createLocation()
 -in component address/page.tsx import function createLocation from actions.ts file
+-create function LazyMap()
+
+
+Create Index Page (listings)
+
+-in folder components create component ListingCard.tsx
+-in component app/page.tsx create async function getData()
+-create variable const data
+-in parent div element create div element and invoke function data?.map()
+-in component ListingCard.tsx create interface iAppProps
+-destructure variable const { getCountryByValue }
+-create variable const country
+-in component app/page.tsx create function ShowItems()
+-import component Suspense from package react
+-in function HomePage add component Suspense
+-create function SkeletonLoading()
+-in folder components create component SkeletonCard.tsx
+-in component app/page.tsx import component SkeletonCard from components/SkeletonCard.tsx
+-in folder components create component NoItems.tsx and function NoItems()
+-in component app/page.tsx import component NoItems from components/NoItems.tsx
+-http://localhost:3000
