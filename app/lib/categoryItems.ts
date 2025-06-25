@@ -1,4 +1,4 @@
-interface iAppProps {
+interface IappProps {
   name: string;
   title: string;
   imageUrl: string;
@@ -6,7 +6,7 @@ interface iAppProps {
   id: number;
 }
 
-export const categoryItems: iAppProps[] = [
+export const categoryItems: IappProps[] = [
   {
     id: 0,
     name: "beach",

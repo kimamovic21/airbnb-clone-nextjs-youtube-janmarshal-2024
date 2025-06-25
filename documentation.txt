@@ -194,3 +194,35 @@ Create Index Page (listings)
 -in folder components create component NoItems.tsx and function NoItems()
 -in component app/page.tsx import component NoItems from components/NoItems.tsx
 -http://localhost:3000
+
+
+Favorites
+
+-in schema.prisma file create model Favorites
+-type command: npx prisma generate
+-in component app/page.tsx destructure variable const { getUser }
+-create variable const user
+-in component ListingCard.tsx, in jsx add conditional rendering userId &&
+-in component SubmitButtons.tsx create and export functions AddToFavoriteButton() and DeleteFromFavoriteButton()
+-in component ListingCard.tsx import functions AddToFavoriteButton() and DeleteFromFavoriteButton() from SubmitButtons.tsx file
+-in jsx add ternary condition isInFavoriteList ? 
+-in actions.ts file create and export async functions deleteFromFavorite and addToFavorite 
+-in component ListingCard.tsx import functions deleteFromFavorite and addToFavorite from actions.ts file
+-in folder app create folder favorites and component page.tsx
+-in component favorites/page.tsx create and export async function FavoritesPage
+-create function getData()
+-open route: http://localhost:3000/favorites
+-in folder favorites create component loading.tsx and function FavoritesLoading()
+-in folder app create folder my-homes and component page.tsx
+-in component my-homes/page.tsx create and export function MyHomesPage() as default
+-open route: http://localhost:3000/my-homes
+-create async function getData()
+-create variable const data
+-in function MyHomesPage() destructure function const { getUser }
+-create variable const user
+-add condition if (!user) 
+-create variable const user
+-import components ListingCard.tsx and NoItems.tsx
+-in jsx add ternary condition data.length === 0 
+-in folder my-homes create component loading.tsx 
+-in component loading.tsx create and export function MyHomesLoading() as default

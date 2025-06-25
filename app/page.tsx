@@ -1,4 +1,5 @@
 import { Suspense } from 'react';
+import { unstable_noStore as noStore } from "next/cache";
 import { getKindeServerSession } from '@kinde-oss/kinde-auth-nextjs/server';
 import prisma from './lib/db';
 import MapFilterItems from './components/MapFilterItems';
@@ -8,6 +9,7 @@ import SkeletonCard from './components/SkeletonCard';
 
 async function getData({
   searchParams,
+  userId,
 }: {
   userId: string | undefined;
   searchParams?: {
@@ -18,6 +20,8 @@ async function getData({
     bathroom?: string;
   };
 }) {
+  noStore();
+
   const data = await prisma.home.findMany({
     where: {
       addedCategory: true,
@@ -35,13 +39,18 @@ async function getData({
       price: true,
       description: true,
       country: true,
+      Favorite: {
+        where: {
+          userId: userId ?? undefined,
+        },
+      },
     },
   });
 
   return data;
 };
 
-const HomePage = ({
+const HomePage = async ({
   searchParams,
 }: {
   searchParams?: {
@@ -56,15 +65,12 @@ const HomePage = ({
     <div className='container mx-auto px-5 lg:px-10'>
       <MapFilterItems />
 
-      <Suspense
-        key={searchParams?.filter}
-        fallback={<SkeletonLoading />}
-      >
+      <Suspense key={searchParams?.filter} fallback={<SkeletonLoading />}>
         <ShowItems searchParams={searchParams} />
       </Suspense>
     </div>
   );
-};
+}
 
 async function ShowItems({
   searchParams,
@@ -80,10 +86,7 @@ async function ShowItems({
   const { getUser } = getKindeServerSession();
   const user = await getUser();
 
-  const data = await getData({
-    searchParams: searchParams,
-    userId: user?.id
-  });
+  const data = await getData({ searchParams: searchParams, userId: user?.id });
 
   return (
     <>
@@ -101,7 +104,11 @@ async function ShowItems({
               imagePath={item.photo as string}
               location={item.country as string}
               price={item.price as number}
+              userId={user?.id}
+              favoriteId={item.Favorite[0]?.id}
+              isInFavoriteList={item.Favorite.length > 0 ? true : false}
               homeId={item.id}
+              pathName='/'
             />
           ))}
         </div>
@@ -110,7 +117,7 @@ async function ShowItems({
   );
 }
 
-function SkeletonLoading() {
+const SkeletonLoading = () => {
   return (
     <div className='grid lg:grid-cols-4 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-8'>
       <SkeletonCard />
