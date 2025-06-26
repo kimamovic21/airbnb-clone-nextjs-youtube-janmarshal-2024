@@ -226,3 +226,29 @@ Favorites
 -in jsx add ternary condition data.length === 0 
 -in folder my-homes create component loading.tsx 
 -in component loading.tsx create and export function MyHomesLoading() as default
+
+
+Rental Id Page
+
+-in folder app create folders home, [id] and component page.tsx
+-in component [id]/page.tsx create and export async function RentalDetailsPage()
+-create async function getData()
+-open route http://localhost:3000/home/[id]
+-in function RentalDetailsPage() create variable const data
+-destructure function { getCountryByValue }
+-create variable const country
+-open link: https://ui.shadcn.com/docs/components/separator
+-type command: npx shadcn@latest add separator
+-in folder components create component CategoryShowcase.tsx and function CategoryShowcase()
+-in component CategoryShowcase.tsx import array categoryItems
+-create variable const category
+-in component [id]/page.tsx import component CategoryShowcase from component CategoryShowcase.tsx
+-in folder components create component HomeMap.tsx and function HomeMap()
+-in component [id]/page.tsx import component HomeMap from component HomeMap.tsx
+-open link: https://www.npmjs.com/package/react-date-range
+-type command: npm i react-date-range
+-type command: npm i --save-dev @types/react-date-range
+-in folder components create component SelectCalendar.tsx
+-in component [id]/page.tsx import component SelectCalendar from component SelectCalendar.tsx
+
+video 05:15:00
