@@ -251,4 +251,22 @@ Rental Id Page
 -in folder components create component SelectCalendar.tsx
 -in component [id]/page.tsx import component SelectCalendar from component SelectCalendar.tsx
 
-video 05:15:00
+
+Reservation System
+
+-in schema.prisma file create model Reservation
+-type command: npx prisma db push
+-in actions.ts file create and export async function createReservation()
+-in component home/[id]/page.tsx create form element for reservation
+-in component SubmitButtons.tsx create and export function ReservationSubmitButton()
+-in component home/[id]/page.tsx import component ReservationSubmitButton from component SubmitButtons.tsx
+-open route: http://localhost:3000/home/[id] and click reservation button
+-in folder app create folder reservations and component page.tsx
+-in component reservations/page.tsx create and export async function ReservationPage()
+-create async function getData()
+-open route: http://localhost:3000/reservations
+-in folder reservations create component loading.tsx 
+-in component loading.tsx create and export function ReservationsLoading()
+-in folder
+-in folder home/[id] create component loading.tsx
+-in component loading.tsx create and export function RentalDetailsLoading()
