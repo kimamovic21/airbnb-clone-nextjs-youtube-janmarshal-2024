@@ -270,3 +270,11 @@ Reservation System
 -in folder
 -in folder home/[id] create component loading.tsx
 -in component loading.tsx create and export function RentalDetailsLoading()
+
+
+Search Modal
+
+-in folder components create component SearchModal.tsx and function SearchModal()
+-open link: https://ui.shadcn.com/docs/components/dialog
+-in component Navbar.tsx import component SearchModal from component SearchModal.tsx
+-open route: http://localhost:3000/ and lick search modal
